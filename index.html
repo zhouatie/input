@@ -39,15 +39,17 @@
 		}
 	</style>
 </head>
-<body>
-	<div class="main">
+<body id="body">
+	<div class="main" id="main">
 		asdasdadas
 	</div>
-	<div class="footer">
+	<div class="footer" id="footer">
 		<input type="text" name="" class="input" id="input">
 	</div>
 	<script>
 	var input = document.getElementById("input");
+		var body = document.getElementById("body");
+		var main = document.getElementById("main");
         input.onfocus=function(){
 		console.log(21);
             setTimeout(function(){
@@ -62,6 +64,7 @@
                 if (iOS11 && (micro || safari) && !wxwork) {
                 return;
                 }
+		    body.scrollIntoView();
                 input.scrollIntoView();
                 setTimeout(function(){
                 input.scrollIntoView();
