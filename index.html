@@ -89,7 +89,7 @@
 	</div>
 		</div>
 	<script>
-		var is_ios = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //判断是否为ios手机
+		//var is_ios = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //判断是否为ios手机
 		
 		//if(!is_ios) return;
 	var input = document.getElementById("input");
@@ -98,7 +98,7 @@
 		
 		var footer = document.getElementById("footer");
 		var wrap = document.getElementById("wrap");
-        input.onclick=function(){
+        input.onfocus=function(){
 		console.log(21);
             setTimeout(function(){
                 //input.UpdateLayout()
@@ -122,11 +122,7 @@
 			 wrap.scrollIntoView();
                 input.scrollIntoView();
 		    //footer.scrollIntoView();
-			if(safari){
-				//body.style.top="40px";
-				//return;
-				wrap.style.translateY="40px";
-			};
+			
                 }, 300);
             }, 300);
         };
