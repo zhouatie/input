@@ -67,6 +67,8 @@
 	</div>
 		</div>
 	<script>
+		var is_ios = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //判断是否为ios手机
+		if(!is_ios) return;
 	var input = document.getElementById("input");
 		var body = document.getElementById("body");
 		var main = document.getElementById("main");
