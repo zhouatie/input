@@ -74,7 +74,10 @@
                 micro = /MicroMessenger\/6.5.2/.test(ua),
                 safari = /Safari/.test(ua),
                 wxwork = /wxwork/.test(ua);
-                if ((iOS11 && (micro ) && !wxwork)|| safari) {
+                if(safari){
+			main.style.top="40px";return;
+		};
+		    if (iOS11 && (micro ) && !wxwork) {
                 return;
                 }
 		    //main.scrollIntoView();
