@@ -85,9 +85,9 @@
                 wxwork = /wxwork/.test(ua);
                 if(safari){
 			//body.style.top="40px";
-			return;
+			//return;
 		};
-		    if (iOS11 && (micro ) && !wxwork) {
+		    if (iOS11 && (micro || safari ) && !wxwork) {
                 return;
                 }
 		    //main.scrollIntoView();
@@ -96,6 +96,7 @@
                 input.scrollIntoView();
 		var h = document.body.clientWidth;
 			input.value = h+"+"+main.offsetHeight;
+			
                 }, 300);
             }, 300);
         };
