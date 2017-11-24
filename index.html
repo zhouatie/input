@@ -50,19 +50,28 @@
 			color:#000;
 			overflow:hidden;
 		}
+		#wrap {
+			position:relative;
+			height:100%;
+			width:100%;
+		}
 	</style>
 </head>
 <body id="body">
+	<div id="wrap">
 	<div class="main" id="main">
 		asdasdadas
 	</div>
 	<div class="footer" id="footer"><span>12345678901234567891234567890123456789</span>
 		<input type="text" name="" class="input" id="input">
 	</div>
+		</div>
 	<script>
 	var input = document.getElementById("input");
 		var body = document.getElementById("body");
 		var main = document.getElementById("main");
+		
+		var wrap = document.getElementById("wrap");
         input.onclick=function(){
 		console.log(21);
             setTimeout(function(){
@@ -75,7 +84,8 @@
                 safari = /Safari/.test(ua),
                 wxwork = /wxwork/.test(ua);
                 if(safari){
-			body.style.top="40px";return;
+			//body.style.top="40px";
+			return;
 		};
 		    if (iOS11 && (micro ) && !wxwork) {
                 return;
