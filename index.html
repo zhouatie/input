@@ -43,7 +43,30 @@
 		asdasdadas
 	</div>
 	<div class="footer">
-		<input type="text" name="" class="input">
+		<input type="text" name="" class="input" id="input">
 	</div>
+	<script>
+	var input = document.getElementById("input");
+        input.addEventListener('focus',function(){
+		console.log(21);
+            setTimeout(function(){
+                input.UpdateLayout()
+                var input = document.getElementById("input");
+                input.onfocus = function(){}
+                const ua = navigator.userAgent,
+                iOS11 = /OS 11_0_1|OS 11_0_2|OS 11_0_3|OS 11_1/.test(ua),
+                micro = /MicroMessenger\/6.5.2/.test(ua),
+                safari = /Safari/.test(ua),
+                wxwork = /wxwork/.test(ua);
+                if (iOS11 && (micro || safari) && !wxwork) {
+                return;
+                }
+                input.scrollIntoView();
+                setTimeout(function(){
+                input.scrollIntoView();
+                }, 300);
+            }, 300);
+        })
+	</script>
 </body>
 </html>
