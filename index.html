@@ -68,11 +68,13 @@
 		</div>
 	<script>
 		var is_ios = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //判断是否为ios手机
+		
 		if(!is_ios) return;
 	var input = document.getElementById("input");
 		var body = document.getElementById("body");
 		var main = document.getElementById("main");
 		
+		var footer = document.getElementById("footer");
 		var wrap = document.getElementById("wrap");
         input.onclick=function(){
 		console.log(21);
@@ -94,10 +96,13 @@
                 }
 		    wrap.scrollIntoView();
                 input.scrollIntoView();
+		    footer.scrollIntoView();
                 setTimeout(function(){
                 input.scrollIntoView();
 		var h = document.body.clientWidth;
-			input.value = h+"+"+main.offsetHeight;
+			 wrap.scrollIntoView();
+                input.scrollIntoView();
+		    footer.scrollIntoView();
 			
                 }, 300);
             }, 300);
