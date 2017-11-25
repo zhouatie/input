@@ -93,7 +93,7 @@
 	</div>
 		</div>
 	<script>
-		//var is_ios = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //判断是否为ios手机
+		var is_ios = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //判断是否为ios手机
 		
 		//if(!is_ios) return;
 	var input = document.getElementById("input");
@@ -103,30 +103,24 @@
 		var footer = document.getElementById("footer");
 		var wrap = document.getElementById("wrap");
         input.onclick=function(){
-		console.log(21);
+		
             setTimeout(function(){
-                //input.UpdateLayout()
-                var input = document.getElementById("input");
-                //input.onfocus = function(){}
                 const ua = navigator.userAgent,
                 iOS11 = /OS 11_0_1|OS 11_0_2|OS 11_0_3|OS 11_1/.test(ua),
                 micro = /MicroMessenger\/6.5.2/.test(ua),
                 safari = /Safari/.test(ua),
-                wxwork = /wxwork/.test(ua);
-                
-		    if (iOS11 && (micro || safari ) && !wxwork) {
-                return;
+                wxwork = /wxwork/.test(ua),
+                qq = /qq/.test(ua.toLowerCase());
+	    	
+	    	if(safari && !qq) return;
+		    
+	    	if (iOS11 && (micro || safari ) && !wxwork) {
+			return;
                 }
-		    wrap.scrollIntoView();
+	    	wrap.scrollIntoView();
                 input.scrollIntoView();
-		    //footer.scrollIntoView();
                 setTimeout(function(){
-                input.scrollIntoView();
-		//var h = document.body.clientWidth;
-			// wrap.scrollIntoView();
-                //input.scrollIntoView();
-		    //footer.scrollIntoView();
-			
+                	input.scrollIntoView();
                 }, 300);
             }, 300);
         };
